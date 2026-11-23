@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Agência Aztro">
+<defs><linearGradient id="p" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#d59aff"/><stop offset=".55" stop-color="#9044ff"/><stop offset="1" stop-color="#6534d9"/></linearGradient></defs>
+<rect width="160" height="160" rx="26" fill="#13091e"/>
+<path d="M80 17 134 110h-30L80 64 55 110H25z" fill="url(#p)"/>
+<path d="M61 95h38l-12 19H49z" fill="#b68aff"/>
+<path d="m112 25 5 11 11 5-11 5-5 11-5-11-11-5 11-5z" fill="#d7afff"/>
+<text x="80" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="24" fill="#ffffff" letter-spacing="2">AZTRO</text>
+</svg>
