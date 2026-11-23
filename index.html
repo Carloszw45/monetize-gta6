@@ -835,7 +835,7 @@
 <li class="no"><span class="xk">✕</span><span>+20.000 cursos liberados</span></li>
 <li class="no"><span class="xk">✕</span><span>Biblioteca completa de +2.500 vídeos (só no PRO)</span></li>
 </ul>
-<a class="cta" data-checkout="https://pagseguropix.org/c/aztro-gta6-basico" href="https://pagseguropix.org/c/aztro-gta6-basico" id="btnBasic" style="width:100%" title="Ir para o checkout do Plano Básico">QUERO O PLANO BÁSICO</a>
+<a class="cta" data-checkout="https://pay.cakto.com.br/abjrvu7_1362764" href="https://pay.cakto.com.br/abjrvu7_1362764" id="btnBasic" style="width:100%" title="Ir para o checkout do Plano Básico">QUERO O PLANO BÁSICO</a>
 </div>
 <!-- PLANO PRO -->
 <div class="plan best">
@@ -882,7 +882,7 @@
 <div class="cart-it"><img alt="Manual" decoding="async" height="68" loading="lazy" src="./asset-064.webp" width="68"/><span class="ck2">✓</span><span class="cap">Manual do Zero</span></div>
 </div>
 </div>
-<a class="cta" href="https://pagseguropix.org/c/plano-pro-1500-conteudos-gta-6" id="btnPro" style="width:100%" title="Ir para o checkout do Plano PRO">QUERO O PLANO PRO 👑</a>
+<a class="cta" href="https://pay.cakto.com.br/v3fifqh" id="btnPro" style="width:100%" title="Ir para o checkout do Plano PRO">QUERO O PLANO PRO 👑</a>
 </div>
 </div>
 <div class="guarantee" style="margin-top:20px">🔒 Compra 100% segura • Acesso imediato • Garantia de 7 dias</div>
@@ -1212,10 +1212,10 @@ document.getElementById('yr').textContent=new Date().getFullYear();
 document.addEventListener('DOMContentLoaded',function(){
   if(typeof fbq!=='function')return;
   var skip={btnBasic:1,dsGo:1,dsKeep:1};
-  document.querySelectorAll('a[href*="pay.wiapy.com"]').forEach(function(a){
+  document.querySelectorAll('a[href^="https://pay.cakto.com.br/"]').forEach(function(a){
     if(skip[a.id])return; // tratados pelo fluxo de downsell
     a.addEventListener('click',function(){
-      var pro=(a.href.indexOf('9TeHpXGYrZAW')>-1);
+      var pro=(a.id==='btnPro');
       fbq('track','InitiateCheckout',{value:pro?37.00:19.90,currency:'BRL',content_name:pro?'Pack PRO GTA 6':'Pack Basico GTA 6'});
     });
   });
