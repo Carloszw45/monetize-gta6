@@ -1,6 +1,8 @@
 # Monetize GTA 6
 
-Página estática do pack de vídeos, preparada para publicação no GitHub Pages.
+Página estática do pack de vídeos publicada no GitHub Pages.
+
+Site: https://carloszw45.github.io/monetize-gta6/
 
 - `index.html`: página principal com o layout existente para celular e computador.
 - `video-*.mp4`: 43 vídeos de demonstração, incluídos no próprio repositório.
@@ -10,7 +12,9 @@ Página estática do pack de vídeos, preparada para publicação no GitHub Page
 
 ## GitHub Pages
 
-Publicar a branch `main`, pasta `/(root)`. O arquivo `.nojekyll` permite servir o site diretamente.
+Publicação configurada na branch `main`, pasta `/(root)`. O arquivo `.nojekyll` permite servir o site diretamente.
+
+As imagens e o vídeo de fundo estão nos arquivos `asset-*`. Os 43 exemplos MP4 foram importados para o repositório pelo workflow de importação.
 
 ## Conteúdo
 
