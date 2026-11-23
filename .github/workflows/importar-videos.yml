@@ -1,0 +1,59 @@
+name: Importar vídeos de demonstração
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/importar-videos.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: importar-videos
+  cancel-in-progress: false
+
+jobs:
+  importar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Baixar e verificar os 43 vídeos da página
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from concurrent.futures import ThreadPoolExecutor
+          from urllib.request import urlopen
+          import hashlib
+
+          categories = {"pt": 7, "gameplays": 7, "cortes": 8, "curiosidades": 7, "teorias": 8, "memes": 6}
+          files = [(category, number) for category, count in categories.items() for number in range(1, count + 1)]
+
+          def download(item):
+              category, number = item
+              name = f"video-{category}-{number:02d}.mp4"
+              target = Path(name)
+              url = f"https://www.monetizecomgta6.com.br/assets/ex/{category}/{number:02d}.mp4"
+              with urlopen(url, timeout=60) as response:
+                  if response.status != 200:
+                      raise RuntimeError(f"{name}: HTTP {response.status}")
+                  data = response.read()
+              if len(data) < 1024 or b"ftyp" not in data[:64]:
+                  raise RuntimeError(f"{name}: arquivo MP4 inválido")
+              target.write_bytes(data)
+              print(f"{name}: {len(data)} bytes, sha256={hashlib.sha256(data).hexdigest()}", flush=True)
+
+          with ThreadPoolExecutor(max_workers=8) as executor:
+              list(executor.map(download, files))
+          assert len(list(Path(".").glob("video-*.mp4"))) == 43
+          PY
+      - name: Salvar os vídeos no repositório
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add video-*.mp4
+          if ! git diff --cached --quiet; then
+            git commit -m "Incluir os 43 vídeos de demonstração"
+            git push origin HEAD:main
+          fi
