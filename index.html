@@ -1449,4 +1449,20 @@ document.addEventListener('click',function(e){
     <a class="sample-video-source" id="sampleVideoSource" href="#" target="_blank" rel="noopener noreferrer">Abrir vídeo original ↗</a>
   </div>
 </div>
+
+<script id="aztro-checkout-attribution">
+document.addEventListener('DOMContentLoaded', function () {
+  var params = new URLSearchParams(window.location.search);
+  var keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid'];
+  document.querySelectorAll('a[href^="https://pay.cakto.com.br/"]').forEach(function (link) {
+    var checkout = new URL(link.href);
+    keys.forEach(function (key) {
+      var value = params.get(key);
+      if (value) checkout.searchParams.set(key, value);
+    });
+    link.href = checkout.toString();
+    if (link.hasAttribute('data-checkout')) link.setAttribute('data-checkout', checkout.toString());
+  });
+});
+</script>
 </body></html>
