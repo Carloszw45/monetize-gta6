@@ -831,8 +831,8 @@ src="https://www.facebook.com/tr?id=1726039475759586&ev=PageView&noscript=1"
 <img alt="GTA 6 Pack" class="pmock" decoding="async" height="460" loading="lazy" src="./asset-082.webp" style="max-height:230px;width:auto;margin:0 auto 14px" width="368"/>
 <div class="ptag">Plano básico</div>
 <div class="pname">+650 VÍDEOS</div>
-<div class="pprice"><small>R$</small>19<small>,90</small></div>
-<div class="ppv">💰 Cerca de <b>3 centavos</b> por vídeo</div>
+<div class="pprice"><small>R$</small>9<small>,90</small></div>
+<div class="ppv">💰 Cerca de <b>1,5 centavo</b> por vídeo</div>
 <div class="pinst">no PIX à vista • acesso imediato</div>
 <div class="pvagas"><div class="pvt"><span>🔥 Packs restantes</span><b id="vagasB">38</b></div><div class="vbar"><i id="vbarB" style="width:100%"></i></div></div>
 <ul class="plist">
@@ -981,7 +981,7 @@ src="https://www.facebook.com/tr?id=1726039475759586&ev=PageView&noscript=1"
 <div class="dsov" id="dsOverlay">
 <div class="ds">
 <button aria-label="Fechar" class="dsx" id="dsClose">✕</button>
-<div style="font-family:'Outfit';font-weight:900;font-size:clamp(16px,4.6vw,21px);color:var(--gold);line-height:1.2;margin-bottom:14px;text-align:center">LEVE 4X MAIS CONTEÚDOS POR APENAS R$7,10 A MAIS! 🔥</div>
+<div style="font-family:'Outfit';font-weight:900;font-size:clamp(16px,4.6vw,21px);color:var(--gold);line-height:1.2;margin-bottom:14px;text-align:center">LEVE 4X MAIS CONTEÚDOS POR APENAS R$17,10 A MAIS! 🔥</div>
 <img alt="Oferta do Plano PRO" decoding="async" height="960" src="./asset-085.webp" style="width:100%;max-width:100%;max-height:58vh;object-fit:contain;border-radius:16px;display:block;margin:0 auto 14px;box-shadow:0 16px 40px rgba(0,0,0,.55)" width="720"/>
 <a class="dsgo" data-preview-link="1" href="#" id="dsGo" title="Prévia demonstrativa: links comerciais desativados">APROVEITAR OFERTA E LEVAR O PRO POR R$27</a>
 <button class="dskeep" id="dsKeep">Continuar com o plano básico</button>
@@ -1210,11 +1210,11 @@ document.getElementById('yr').textContent=new Date().getFullYear();
   var basicUrl=btn.getAttribute('data-checkout');
   function open(){ov.classList.add('on');document.body.style.overflow='hidden';}
   function close(){ov.classList.remove('on');document.body.style.overflow='';}
-  btn.addEventListener('click',function(){ if(typeof fbq==='function')fbq('track','InitiateCheckout',{value:19.90,currency:'BRL',content_name:'Pack Basico GTA 6'}); });
+  btn.addEventListener('click',function(){ if(typeof fbq==='function')fbq('track','InitiateCheckout',{value:9.90,currency:'BRL',content_name:'Pack Basico GTA 6'}); });
   if(x)x.addEventListener('click',close);
   if(keep)keep.addEventListener('click',function(){
     close();
-    if(typeof fbq==='function')fbq('track','InitiateCheckout',{value:19.90,currency:'BRL',content_name:'Pack Basico GTA 6'});
+    if(typeof fbq==='function')fbq('track','InitiateCheckout',{value:9.90,currency:'BRL',content_name:'Pack Basico GTA 6'});
     if(window.previewNotice)window.previewNotice('Checkout desativado nesta prévia.');
   });
   if(go)go.addEventListener('click',function(){
@@ -1231,7 +1231,7 @@ document.addEventListener('DOMContentLoaded',function(){
     if(skip[a.id])return; // tratados pelo fluxo de downsell
     a.addEventListener('click',function(){
       var pro=(a.id==='btnPro');
-      fbq('track','InitiateCheckout',{value:pro?37.00:19.90,currency:'BRL',content_name:pro?'Pack PRO GTA 6':'Pack Basico GTA 6'});
+      fbq('track','InitiateCheckout',{value:pro?37.00:9.90,currency:'BRL',content_name:pro?'Pack PRO GTA 6':'Pack Basico GTA 6'});
     });
   });
 });
